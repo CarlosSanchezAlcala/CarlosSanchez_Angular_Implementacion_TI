@@ -1,0 +1,36 @@
+<div align="center">
+  <form [formGroup]="productoForm" (ngSubmit)="saveProducto()" class="py-4">
+
+    <h1 style="font-family: 'Dialog'; font-size: 65px; margin: 40px"><span class="badge bg-secondary">{{productoService.productoSelected ? 'Editar Producto' : 'Registrar Producto'}}</span></h1>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="nombreProducto" class="form-control" placeholder="Ingrese el nombre del producto.">
+      <label>Nombre del Producto:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="descripcionProducto" class="form-control" placeholder="Ingrese la descripción del producto.">
+      <label>Descripción:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="tipoProducto" maxlength="1" minlength="1" class="form-control" placeholder="Ingrese el tipo del producto.">
+      <label>Tipo:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="number" formControlName="precioProducto" class="form-control" placeholder="Ingrese el precio del producto.">
+      <label>Precio:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="number" formControlName="stockProducto" class="form-control" placeholder="Ingrese el stock del producto.">
+      <label>Stock:</label>
+    </div>
+
+    <button style="margin: 10px" class="btn btn-light mr-2" type="button" (click)="navigateProducto()">Cancelar</button>
+
+    <button style="margin: 10px" type="submit" class="btn btn-success">{{productoService.productoSelected ? 'Actualizar' : 'Registrar Producto'}}</button>
+
+  </form>
+</div>

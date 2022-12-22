@@ -1,0 +1,51 @@
+<div align="center">
+  <form [formGroup]="clienteForm" (ngSubmit)="saveCliente()" class="py-4">
+
+    <h1 style="font-family: 'Dialog'; font-size: 65px; margin: 40px"><span class="badge bg-secondary">{{clienteService.clienteSelected ? 'Editar Cliente' : 'Registrar Cliente'}}</span></h1>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="nombrecliente" minlength="3" class="form-control" placeholder="Ingrese el nombre del cliente.">
+      <label>Nombre del Cliente:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="apellidoPaternoCliente" minlength="3" class="form-control" placeholder="Ingrese el apellido paterno del cliente.">
+      <label>Apellido Paterno del Cliente:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="apellidoMaternoCliente" minlength="3" class="form-control" placeholder="Ingrese el apellido materno del cliente.">
+      <label>Apellido Materno del Cliente:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="number" formControlName="dniCliente" maxlength="8" minlength="3" class="form-control" placeholder="Ingrese el número de DNI del cliente.">
+      <label>DNI del Cliente:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="correoCliente" minlength="3" class="form-control" placeholder="Ingrese el correo electronico del cliente.">
+      <label>Correo Electronico del Cliente:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="number" formControlName="celularCliente" maxlength="9" minlength="1" class="form-control" placeholder="Ingrese el número telefonico del cliente.">
+      <label>Celular del Cliente:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="number" formControlName="ubigeo" maxlength="6" minlength="1" class="form-control" placeholder="Ingrese su código Ubigeo.">
+      <label>Ubigeo:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="direccionCliente" minlength="1" class="form-control" placeholder="Ingrese la dirección del cliente.">
+      <label>Dirección del Cliente:</label>
+    </div>
+
+    <button style="margin: 10px" class="btn btn-light mr-2" type="button" (click)="navigateCliente()">Cancelar</button>
+
+    <button style="margin: 10px" type="submit" class="btn btn-success">{{clienteService.clienteSelected ? 'Actualizar' : 'Registrar Cliente'}}</button>
+
+  </form>
+</div>

@@ -1,0 +1,94 @@
+<div style="margin: 40px">
+  <h1 style="font-family: 'Dialog'; font-size: 65px"><span class="badge bg-secondary">Listado de Productos</span></h1>
+</div>
+
+<!-- Inicio del Contenedor de Imagenes -->
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin: 40px; width: 600px; border-radius: 60px">
+
+  <div class="carousel-indicators">
+    <button style="color: white" type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button style="color: white" type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button style="color: white" type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button style="color: white" type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button style="color: white" type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button style="color: white" type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="./assets/Carapulcra.jpg" class="d-block w-100" style="border-radius: 40px">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="./assets/CauCau.jpg" class="d-block w-100" style="border-radius: 40px">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="./assets/HamburCarne.jpg" class="d-block w-100" style="border-radius: 40px">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="./assets/Chaufa.jpg" class="d-block w-100" style="border-radius: 40px">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="./assets/HamburPollo.jpg" class="d-block w-100" style="border-radius: 40px">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="./assets/Inka.jpg" class="d-block w-100" style="border-radius: 40px">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+  </div>
+
+  <button style="color: white" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span style="color: white" class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span style="color: white" class="visually-hidden">Previous</span>
+  </button>
+
+  <button style="color: white" class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span style="color: white" class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span style="color: white" class="visually-hidden">Next</span>
+  </button>
+
+</div>
+<!-- Fin del Contenedor de Imagenes -->
+
+<button class="btn btn-success" (click)="navigateForm()">Nuevo Producto</button>
+
+<table class="table" style="margin: 40px">
+  <thead class="table-dark">
+  <tr align="center">
+    <th scope="col">Nombre Producto:</th>
+    <th scope="col">Descripción:</th>
+    <th scope="col">Tipo:</th>
+    <th scope="col">Precio:</th>
+    <th scope="col">Disponibilidad:</th>
+    <th scope="col">Acciones:</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr align="center" *ngFor="let productos of productos">
+    <td>{{productos.nombreProducto}}</td>
+    <td>{{productos.descripcionProducto}}</td>
+    <td>{{productos.tipoProducto}}</td>
+    <td>{{productos.precioProducto}}</td>
+    <td>{{productos.stockProducto}}</td>
+    <td>
+      <button class="btn btn-warning" style="margin: 2px" (click)="editarProducto(productos)">Modificar</button>
+      <button class="btn btn-danger" style="margin: 2px" (click)="deleteProducto(productos.idProducto)">Eliminar</button>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,40 @@
+<div style="margin: 40px">
+  <h1 style="font-family: 'Dialog'; font-size: 65px"><span class="badge bg-secondary">Listado de Clientes</span></h1>
+</div>
+
+<button class="btn btn-success" (click)="navigateForm()">Nuevo Cliente</button>
+
+<table class="table" style="margin: 40px">
+  <thead class="table-dark">
+  <tr align="center">
+    <th scope="col">Nombres:</th>
+    <th scope="col">Apellido Paterno:</th>
+    <th scope="col">Apellido Materno:</th>
+    <th scope="col">DNI:</th>
+    <th scope="col">Celular:</th>
+    <th scope="col">Correo:</th>
+    <th scope="col">Departamento:</th>
+    <th scope="col">Provincia:</th>
+    <th scope="col">Distrito:</th>
+    <th scope="col">Dirección:</th>
+    <th scope="col">Acciones:</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr align="center" *ngFor="let cliente of clientes">
+    <td>{{cliente.nombrecliente}}</td>
+    <td>{{cliente.apellidoPaternoCliente}}</td>
+    <td>{{cliente.apellidoMaternoCliente}}</td>
+    <td>{{cliente.dniCliente}}</td>
+    <td>{{cliente.celularCliente}}</td>
+    <td>{{cliente.correoCliente}}</td>
+    <td>{{cliente.ubigeo.departamento}}</td>
+    <td>{{cliente.ubigeo.provincia}}</td>
+    <td>{{cliente.ubigeo.distrito}}</td>
+    <td>{{cliente.direccionCliente}}</td>
+    <td>
+      <button class="btn btn-warning" style="margin: 2px" (click)="editarCliente(cliente)">Modificar</button>
+      <button class="btn btn-danger" style="margin: 2px" (click)="deleteCliente(cliente.idCliente)">Eliminar</button>
+    </td>
+  </tr>
+</table>

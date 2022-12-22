@@ -1,0 +1,42 @@
+<div style="margin: 40px">
+  <h1 style="font-family: 'Dialog'; font-size: 65px"><span class="badge bg-secondary">Listado de Usuarios</span></h1>
+</div>
+
+<button class="btn btn-success" (click)="navigateForm()">Nuevo Usuario</button>
+
+<table class="table" style="margin: 40px">
+  <thead class="table-dark">
+  <tr align="center">
+    <th scope="col">Nombres:</th>
+    <th scope="col">Apellido Paterno:</th>
+    <th scope="col">Apellido Materno:</th>
+    <th scope="col">DNI:</th>
+    <th scope="col">Turno:</th>
+    <th scope="col">Celular:</th>
+    <th scope="col">Correo:</th>
+    <th scope="col">Departamento:</th>
+    <th scope="col">Provincia:</th>
+    <th scope="col">Distrito:</th>
+    <th scope="col">Dirección:</th>
+    <th scope="col">Acciones:</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr align="center" *ngFor="let usuario of usuarios">
+    <td>{{usuario.nombreUsuario}}</td>
+    <td>{{usuario.apellidoPaternoUsuario}}</td>
+    <td>{{usuario.apellidoMaternoUsuario}}</td>
+    <td>{{usuario.dniUsuario}}</td>
+    <td>{{usuario.turnoUsuario}}</td>
+    <td>{{usuario.celularUsuario}}</td>
+    <td>{{usuario.correoUsuario}}</td>
+    <td>{{usuario.ubigeo.departamento}}</td>
+    <td>{{usuario.ubigeo.provincia}}</td>
+    <td>{{usuario.ubigeo.distrito}}</td>
+    <td>{{usuario.direccionUsuario}}</td>
+    <td>
+      <button class="btn btn-warning" style="margin: 2px" (click)="editarUsuario(usuario)">Modificar</button>
+      <button class="btn btn-danger" style="margin: 2px" (click)="deleteUsuario(usuario.idUsuario)">Eliminar</button>
+    </td>
+  </tr>
+</table>

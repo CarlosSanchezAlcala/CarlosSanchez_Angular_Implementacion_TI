@@ -1,0 +1,66 @@
+<div align="center">
+  <form [formGroup]="usuarioForm" (ngSubmit)="saveUsuario()" class="py-4">
+
+    <h1 style="font-family: 'Dialog'; font-size: 65px; margin: 40px"><span class="badge bg-secondary">{{usuarioService.usuarioSelect ? 'Editar Usuario' : 'Registrar Usuario'}}</span></h1>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="nombreUsuario" minlength="3" class="form-control" placeholder="Ingrese el nombre del usuario.">
+      <label>Nombre del Usuario:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="apellidoPaternoUsuario" minlength="3" class="form-control" placeholder="Ingrese el apellido paterno del usuario.">
+      <label>Apellido Paterno del Usuario:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="apellidoMaternoUsuario" minlength="3" class="form-control" placeholder="Ingrese el apellido materno del usuario.">
+      <label>Apellido Materno del Usuario:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="dniUsuario" maxlength="8" minlength="3" class="form-control" placeholder="Ingrese el número de DNI del usuario.">
+      <label>DNI del Usuario:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="password" formControlName="claveUsuario" minlength="3" class="form-control" placeholder="Ingrese la clave para el usuario.">
+      <label>Clave de acceso para Usuario:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="number" formControlName="nivelUsuario" maxlength="1" minlength="1" class="form-control" placeholder="Ingrese el nivel del usuario.">
+      <label>Nivel de acceso del Usuario:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="correoUsuario" minlength="3" class="form-control" placeholder="Ingrese el correo electronico del usuario.">
+      <label>Correo Electronico del Usuario:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="number" formControlName="celularUsuario" maxlength="9" minlength="1" class="form-control" placeholder="Ingrese el número telefonico del usuario.">
+      <label>Celular del Usuario:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="number" formControlName="ubigeo" maxlength="6" minlength="1" class="form-control" placeholder="Ingrese su código Ubigeo.">
+      <label>Ubigeo:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="direccionUsuario" minlength="1" class="form-control" placeholder="Ingrese la dirección del Usuario.">
+      <label>Dirección del Usuario:</label>
+    </div>
+
+    <div style="width: 800px" class="form-floating mb-3">
+      <input type="text" formControlName="turnoUsuario" maxlength="1" minlength="1" class="form-control" placeholder="Ingrese el turno de trabajo.">
+      <label>Turno del Usuario:</label>
+    </div>
+
+    <button style="margin: 10px" class="btn btn-light mr-2" type="button" (click)="navigateUsuario()">Cancelar</button>
+
+    <button style="margin: 10px" type="submit" class="btn btn-success">{{usuarioService.usuarioSelect ? 'Actualizar' : 'Registrar Usuario'}}</button>
+
+  </form>
+</div>
